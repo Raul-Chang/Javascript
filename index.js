@@ -14,18 +14,24 @@ function solicitarNotas(){
     let notaIngresada = prompt(`Ingrese las notas`)
     if (notaIngresada>=0 && notaIngresada<=10){
         nota = notaIngresada
-    } else {
-        console.log(`valor ingresado invalido`)                
+    } else {        
+        nota = 11               
     }
 }
 
 for(i=0; i<5; i++){
     if(i<5){
         solicitarNotas(); 
-        sumaNotas = Number(sumaNotas) + Number(nota)       
-        console.log(Number(nota))
-    }        
-}
+        if(nota<=0 || nota>10){
+            alert(`Valor ingresado invalido. Intente nuevamente`)
+            i--
+        } else {
+            sumaNotas = Number(sumaNotas) + Number(nota)        
+            console.log(Number(nota))
+            }
+    } 
+}       
+
 
 let promedio = sumaNotas / 5;
 console.log(`Promedio de notas del alumno ${alumno} en las 5 materias es = ${promedio}`)
