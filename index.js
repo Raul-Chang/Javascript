@@ -5,6 +5,7 @@
 let sumaNotas = 0
 let nota = 0
 let arrayNotas = []
+let materias = ["Matematica", "Fisica" , "Quimica", "Biologia", "Historia"]
 
 let alumno = prompt("Ingrese Nombre y Apellido del alumno")
 
@@ -12,7 +13,7 @@ alert("Por favor ingrese el valor de las 5 notas del alumno, solo valores entre 
 
 
 function solicitarNotas(){
-    let notaIngresada = prompt(`Ingrese las notas`)
+    let notaIngresada = prompt(`Ingrese la nota de ${materias[i]} :`)
     if (notaIngresada>=0 && notaIngresada<=10){
         nota = notaIngresada
         arrayNotas.push(nota)
@@ -34,7 +35,7 @@ for(i=0; i<5; i++){
 }       
 
 for( i=0 ; i<arrayNotas.length ; i++ ){
-    console.log(`Nota ingresada es : ${arrayNotas[i]}`)
+    console.log(`Nota ingresada de ${materias[i]} es : ${arrayNotas[i]}`)
 }
 
 let promedio = sumaNotas / 5;
