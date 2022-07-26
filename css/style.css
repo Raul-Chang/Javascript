@@ -1,0 +1,52 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-color: chocolate;
+}
+
+h1 {
+    text-align: center;
+    color: yellow;
+    margin-top: 2rem;
+    background-color: black;
+}
+
+h2 {
+    text-align: center;
+    color: wheat;
+    margin-top: 2rem;
+}
+
+p {
+    color: white;
+    font-size: 20px;
+}
+
+.contenedor-tarjetas {
+    display: flex;
+    flex-wrap: wrap;
+    text-align: center;
+    
+}
+
+.tarjeta {
+    width: 25%;
+    border: 4px solid black;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-size: 18px;
+    margin: 3rem;
+}
+
+.img-container {
+    width: 250px;
+    height: 250px;
+    padding: 1rem;
+}
+
+.img-container img {
+    width: 100%;
+    height: 100%;
+}
