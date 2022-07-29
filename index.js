@@ -51,11 +51,11 @@ const tarjetasHtml = listaProductos.productos.reduce((acc, elemento, i) => {
             <div class="img-container">
                 <img src=${elemento.img} alt=${elemento.description}>
             </div>   
-            <p>
+            <p class="p-tarjeta">
                 ${elemento.description}
             </p> 
             <div>
-                <p>
+                <p class="p-tarjeta">
                     Precio: ${elemento["price(ars)"]}
                 </p>               
             </div>   
@@ -67,12 +67,37 @@ const contenedorTarjetas = document.querySelector(".contenedor-tarjetas")
 
 contenedorTarjetas.innerHTML = tarjetasHtml
 
-const cliente = prompt("Bienvenido a xChocostorex. Por favor ingresa tu nombre:")
-
 //Recepcion de valores por prompt para generar un saludo al cliente
 
+const formularioSaludo = document.querySelector(".nombre-saludo")
+const inputNombreSaludo = document.querySelector(".input-nombre")
 const saludo = document.querySelector(".saludo")
 
-saludo.innerHTML = `Hola ${cliente} te muestro el listado de productos de la tienda: `
+formularioSaludo.onsubmit = (event) => {
+    event.preventDefault()
+    saludo.innerHTML = `Hola ${inputNombreSaludo.value} te muestro el listado de productos de la tienda: `
+    formularioSaludo.reset()
+    formularioSaludo.style.display = "none";
+}
+
+//Cambiando el color de fondo y el tama;o del texto al mover el mouse sobre las tarjetas de productos
+
+const divTarjeta = [document.querySelectorAll(".tarjeta")]
+
+console.log(divTarjeta)
+
+divTarjeta[0].forEach( function (ele , i, arreglo) {
+    ele.onmouseover = () => {    
+        ele.classList.toggle("tarjeta-over")        
+    } 
+    ele.onmouseout = () => {
+        ele.classList.toggle("tarjeta-over") 
+    }
+})
+
+
+
+
+
 
 
